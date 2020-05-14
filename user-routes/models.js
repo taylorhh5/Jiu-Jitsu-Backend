@@ -171,3 +171,4 @@ function removeSidemount(id){
     .where('id', id)
     .del()
 }
+
