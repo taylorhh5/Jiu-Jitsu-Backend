@@ -5,7 +5,7 @@ const Move = require("./models.js");
 const restricted = require('../auth/auth-middleware.js')
 
 //get all takedowns
-router.get("/takedown", restricted, (req, res) => {
+router.get("/takedown", (req, res) => {
   Move.getTakedown()
     .then((move) => {
       res.status(200).json(move);
