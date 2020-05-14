@@ -16,7 +16,16 @@ module.exports = {
   addMount,
   addBack,
   addSidemount,
-  editTakedown
+  editTakedown,
+  editGuard,
+  editMount,
+  editBack,
+  editSidemount,
+  removeTakedown,
+  removeGuard,
+  removeMount,
+  removeBack,
+  removeSidemount
 };
 
 function getTakedown() {
@@ -95,4 +104,70 @@ function editTakedown(id, changes) {
     .where("id", id)
     .update(changes)
     .then((count) => (count > 0 ? this.getTakedownById(id) : null));
+}
+
+//edit guard
+function editGuard(id, changes) {
+    return db("guard")
+      .where("id", id)
+      .update(changes)
+      .then((count) => (count > 0 ? this.getGuardById(id) : null));
+  }
+
+  //edit mount
+function editMount(id, changes) {
+    return db("mount")
+      .where("id", id)
+      .update(changes)
+      .then((count) => (count > 0 ? this.getMountById(id) : null));
+  }
+  
+  //edit back
+function editBack(id, changes) {
+    return db("back")
+      .where("id", id)
+      .update(changes)
+      .then((count) => (count > 0 ? this.getBackById(id) : null));
+  }
+
+  //edit sidemount
+function editSidemount(id, changes) {
+    return db("sidemount")
+      .where("id", id)
+      .update(changes)
+      .then((count) => (count > 0 ? this.getSidemountById(id) : null));
+  }
+  
+  function removeTakedown(id){
+      return db("takedown")
+      .where('id', id)
+      .del()
+  }
+  
+   
+  function removeGuard(id){
+    return db("guard")
+    .where('id', id)
+    .del()
+}
+
+ 
+function removeMount(id){
+    return db("mount")
+    .where('id', id)
+    .del()
+}
+
+ 
+function removeBack(id){
+    return db("back")
+    .where('id', id)
+    .del()
+}
+
+ 
+function removeSidemount(id){
+    return db("sidemount")
+    .where('id', id)
+    .del()
 }
