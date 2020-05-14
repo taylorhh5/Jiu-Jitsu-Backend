@@ -176,4 +176,31 @@ router.get('/sidemount/:id', (req, res)=>{
         res.status(500).json({err:'failed to get sidemount move'})
     })
 })
+
+//ADD takedown
+router.post('/takedown', (req, res)=>{
+
+    Move
+    .addTakedown(req.body)
+    .then(move =>{
+        res.status(201).json(move);
+    }).catch(err =>{
+        res.status(500).json({err:'failed to add mount move'})
+    })
+})
+
+router.put('/takedown/:id', (req, res) => {
+    const id =req.params.id
+    const body = req.body;
+    Move
+    .editTakedown(id,body)
+
+    .then(move => {
+        ! move ? res.status(400).json({message:"Move does not exist"}):
+        res.status(200).json(move);
+    })
+    .catch(err =>{
+        console.log('error', err);res.status(500).json({error:"There was an error updating the move"})
+    })
+})
 module.exports=router;
