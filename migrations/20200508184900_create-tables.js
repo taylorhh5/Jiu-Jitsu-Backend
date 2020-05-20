@@ -13,7 +13,7 @@ exports.up = function (knex) {
       tbl.string("image_url", 500)
 
       
-      tbl.integer("takedown_user_id")
+      tbl.integer("user_id")
       .unsigned()
       .references("id")
       .inTable("users")
@@ -26,7 +26,7 @@ exports.up = function (knex) {
       tbl.text("description").notNullable()
       tbl.string("image_url", 500)
 
-      tbl.integer("guard_user_id")
+      tbl.integer("user_id")
       .unsigned()
       .references("id")
       .inTable("users")
@@ -39,7 +39,7 @@ exports.up = function (knex) {
       tbl.text("description").notNullable()
       tbl.string("image_url", 500)
 
-      tbl.integer("mount_user_id")
+      tbl.integer("user_id")
       .unsigned()
       .references("id")
       .inTable("users")
@@ -52,7 +52,7 @@ exports.up = function (knex) {
       tbl.text("description").notNullable()
       tbl.string("image_url", 500)
 
-      tbl.integer("sidemount_user_id")
+      tbl.integer("user_id")
       .unsigned()
       .references("id")
       .inTable("users")
@@ -65,7 +65,7 @@ exports.up = function (knex) {
       tbl.text("description").notNullable()
       tbl.string("image_url", 500)
 
-      tbl.integer("back_user_id")
+      tbl.integer("user_id")
       .unsigned()
       .references("id")
       .inTable("users")

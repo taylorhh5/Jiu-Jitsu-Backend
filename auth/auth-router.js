@@ -38,11 +38,15 @@ router.post('/login', (req, res) => {
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
         
-        const token = getJwtToken(user.email, user.id); 
+        const token = getJwtToken(user.email, user.id);
+        const id = user.id
+        const image = user.image_url
 
         
         res.status(200).json({
-          message: `Welcome to Jiu Jitsu Trainer ${user.email}!`, 
+          message: `Welcome to Jiu Jitsu Trainer ${user.email}!`,
+          id,
+          image, 
           token 
         });
       } else {

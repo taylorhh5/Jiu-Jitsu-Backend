@@ -179,7 +179,7 @@ router.get("/sidemount/:id", (req, res) => {
 });
 
 //ADD takedown
-router.post("/takedown", (req, res) => {
+router.post("/takedown", restricted, (req, res) => {
   Move.addTakedown(req.body)
     .then((move) => {
       res.status(201).json(move);
@@ -190,7 +190,7 @@ router.post("/takedown", (req, res) => {
 });
 
 
-router.post("/guard", (req, res) => {
+router.post("/guard", restricted,(req, res) => {
     Move.addGuard(req.body)
       .then((move) => {
         res.status(201).json(move);
@@ -200,7 +200,7 @@ router.post("/guard", (req, res) => {
       });
   });
 
-router.post("/mount", (req, res) => {
+router.post("/mount", restricted, (req, res) => {
     Move.addMount(req.body)
       .then((move) => {
         res.status(201).json(move);
@@ -210,7 +210,7 @@ router.post("/mount", (req, res) => {
       });
   });
 
-  router.post("/back", (req, res) => {
+  router.post("/back", restricted, (req, res) => {
     Move.addBack(req.body)
       .then((move) => {
         res.status(201).json(move);
@@ -220,7 +220,7 @@ router.post("/mount", (req, res) => {
       });
   });
 
-  router.post("/sidemount", (req, res) => {
+  router.post("/sidemount", restricted,(req, res) => {
     Move.addSidemount(req.body)
       .then((move) => {
         res.status(201).json(move);
