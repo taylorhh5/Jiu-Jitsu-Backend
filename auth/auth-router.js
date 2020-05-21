@@ -41,13 +41,15 @@ router.post('/login', (req, res) => {
         const token = getJwtToken(user.email, user.id);
         const id = user.id
         const image = user.image_url
+        const email = user.email
 
         
         res.status(200).json({
           message: `Welcome to Jiu Jitsu Trainer ${user.email}!`,
           id,
           image, 
-          token 
+          token,
+          email 
         });
       } else {
         res.status(401).json({ message: 'Invalid Credentials, Please try again.' });
