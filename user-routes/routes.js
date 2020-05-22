@@ -116,7 +116,7 @@ router.get("/mount/:id", (req, res) => {
     });
 });
 
-//get all guard
+//get all back
 router.get("/back", (req, res) => {
   Move.getBack()
     .then((move) => {
@@ -147,7 +147,7 @@ router.get("/back/:id", (req, res) => {
     });
 });
 
-//get all guard
+//get all sidemount
 router.get("/sidemount", (req, res) => {
   Move.getSidemount()
     .then((move) => {
@@ -158,7 +158,7 @@ router.get("/sidemount", (req, res) => {
     });
 });
 
-//get guard by id
+//get sidemount by id
 router.get("/sidemount/:id", (req, res) => {
   const id = req.params.id;
   console.log(req.params);
@@ -233,7 +233,7 @@ router.post("/mount", restricted, (req, res) => {
 
 //PUT
 
-router.put("/takedown/:id", (req, res) => {
+router.put("/takedown/:id", restricted, (req, res) => {
   const id = req.params.id;
   const body = req.body;
   Move.editTakedown(id, body)
@@ -249,7 +249,7 @@ router.put("/takedown/:id", (req, res) => {
     });
 });
 
-router.put("/guard/:id", (req, res) => {
+router.put("/guard/:id", restricted, (req, res) => {
   const id = req.params.id;
   const body = req.body;
   Move.editGuard(id, body)
@@ -265,7 +265,7 @@ router.put("/guard/:id", (req, res) => {
     });
 });
 
-router.put("/mount/:id", (req, res) => {
+router.put("/mount/:id", restricted, (req, res) => {
   const id = req.params.id;
   const body = req.body;
   Move.editMount(id, body)
@@ -281,7 +281,7 @@ router.put("/mount/:id", (req, res) => {
     });
 });
 
-router.put("/back/:id", (req, res) => {
+router.put("/back/:id", restricted, (req, res) => {
   const id = req.params.id;
   const body = req.body;
   Move.editBack(id, body)
@@ -297,7 +297,7 @@ router.put("/back/:id", (req, res) => {
     });
 });
 
-router.put("/sidemount/:id", (req, res) => {
+router.put("/sidemount/:id", restricted, (req, res) => {
   const id = req.params.id;
   const body = req.body;
   Move.editSidemount(id, body)
@@ -313,7 +313,7 @@ router.put("/sidemount/:id", (req, res) => {
     });
 });
 
-router.delete("/takedown/:id", (req, res) => {
+router.delete("/takedown/:id", restricted, (req, res) => {
   const id = req.params.id;
   Move.removeTakedown(id)
     .then((move) => {
@@ -328,7 +328,7 @@ router.delete("/takedown/:id", (req, res) => {
 });
 
 
-router.delete("/guard/:id", (req, res) => {
+router.delete("/guard/:id", restricted, (req, res) => {
     const id = req.params.id;
     Move.removeGuard(id)
       .then((move) => {
@@ -343,7 +343,7 @@ router.delete("/guard/:id", (req, res) => {
   });
 
 
-  router.delete("/mount/:id", (req, res) => {
+  router.delete("/mount/:id", restricted, (req, res) => {
     const id = req.params.id;
     Move.removeMount(id)
       .then((move) => {
@@ -358,7 +358,7 @@ router.delete("/guard/:id", (req, res) => {
   });
 
   
-router.delete("/back/:id", (req, res) => {
+router.delete("/back/:id", restricted, (req, res) => {
     const id = req.params.id;
     Move.removeBack(id)
       .then((move) => {
@@ -373,7 +373,7 @@ router.delete("/back/:id", (req, res) => {
   });
 
   
-router.delete("/sidemount/:id", (req, res) => {
+router.delete("/sidemount/:id", restricted, (req, res) => {
     const id = req.params.id;
     Move.removeSidemount (id)
       .then((move) => {
