@@ -17,7 +17,7 @@ exports.up = function (knex) {
       .unsigned()
       .references("id")
       .inTable("users")
-      .onDelete("RESTRICT")
+      .onDelete("CASCADE")
       .onUpdate("CASCADE")
     })
     .createTable("guard", (tbl) => {
@@ -30,7 +30,7 @@ exports.up = function (knex) {
       .unsigned()
       .references("id")
       .inTable("users")
-      .onDelete("RESTRICT")
+      .onDelete("CASCADE")
       .onUpdate("CASCADE")
     })
     .createTable("mount", (tbl) => {
@@ -43,7 +43,7 @@ exports.up = function (knex) {
       .unsigned()
       .references("id")
       .inTable("users")
-      .onDelete("RESTRICT")
+      .onDelete("CASCADE")
       .onUpdate("CASCADE")
     })
     .createTable("sidemount", (tbl) => {
@@ -56,7 +56,7 @@ exports.up = function (knex) {
       .unsigned()
       .references("id")
       .inTable("users")
-      .onDelete("RESTRICT")
+      .onDelete("CASCADE")
       .onUpdate("CASCADE")
     })
     .createTable("back", (tbl) => {
@@ -69,7 +69,7 @@ exports.up = function (knex) {
       .unsigned()
       .references("id")
       .inTable("users")
-      .onDelete("RESTRICT")
+      .onDelete("CASCADE")
       .onUpdate("CASCADE")
     });
 };
