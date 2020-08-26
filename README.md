@@ -1,3 +1,5 @@
+### This is the server side code for the application Brazilian Jiu-Jitsu Trainer. Written with Node.js and Express, this app has a postgreSQL DB and is hosted on Heroku.
+
 # Brazilian Jiu-Jitsu Trainer
 A way for people to **learn** and **share** their knowledge of Brazilian Jiu-Jitsu.
 
@@ -10,18 +12,7 @@ A way for people to **learn** and **share** their knowledge of Brazilian Jiu-Jit
 # Tech Stack
 CSS | JavaScript | React | Redux | Node.js/Express | PostgresSQL
 
-# Available Scripts 
-in the project directory, you can run:
-## npm start 
-runs the app in development mode. open http://localhost:3000 to view in the browser.
-The page will reload if you make edits. You will also see any lint errors in the console.
-
-## npm build
-Builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## npm eject
-Note: this is a one-way operation. Once you eject, you can’t go back!
-
-If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
-
-You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Install
+npm install
+## Usage
+npm run server
